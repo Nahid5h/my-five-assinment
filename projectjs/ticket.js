@@ -1,7 +1,11 @@
-const allBtn = document.getElementsByClassName("add-btn");
+   const allBtn = document.getElementsByClassName("add-btn");
 
-let count = 40;
-let seatcount = 0;
+   let count = 40;
+  let seatcount = 0;
+  let section  = 0;
+
+const apply =document.getElementById('apply');
+apply.disabled =  true;
 for (const btn of allBtn) {
     btn.addEventListener("click", function (e) {
         count = count - 1;
@@ -27,7 +31,11 @@ for (const btn of allBtn) {
         const totalCost = document.getElementById("total-cost").innerText;
         const ConvertedTotalCost = parseInt(totalCost);
         
-       
+        section = section+1
+
+    if(section == 4){
+        apply.disabled = false;
+    }
         document.getElementById("total-cost").innerText=ConvertedTotalCost + parseInt(price);
 
 
@@ -46,9 +54,52 @@ function setInnerText(id, value) {
 function play(){
     const allSection =document.getElementById('all-section');
     allSection.classList.add('hidden')
+    const footer =document.getElementById('foot');
+    footer.classList.add('hidden')
 
 
     const fullSuccess= document.getElementById('full-success');
  fullSuccess.classList.remove('hidden')
 
+}
+
+// apply button
+const btn = document.getElementById("apply");
+btn.addEventListener("click", function () {
+  const couponElement = document.getElementById("input-field").value;
+  const couponCode = couponElement.split(" ").join("").toUpperCase();
+
+  if (couponCode === "NEW15" || couponCode === "COUPLE20") {
+    //discount
+    const totalCost = document.getElementById("total-cost").innerText;
+    const totalCostNum = parseInt(totalCost);
+    const discountPrice = totalCostNum * 0.2;
+    //  grand change with coupon
+    const grandTotal = document.getElementById("grand-total").innerText;
+    const grandTotalNum = parseInt(grandTotal);
+    document.getElementById("grand-total").innerText =
+      grandTotalNum - discountPrice;
+    document.getElementById("input-field").value = "";
+  } else {
+    alert("please enter valid coupon code");
+    document.getElementById("input-field").value = "";
+   }
+});
+
+// disable 
+
+function toggleButtion(){
+    const phoneNumber =document.getElementById('phone-number');
+    const  submitmitButtion =document.getElementById('submit-Buttion')
+    if(!isNaN(phoneNumber.value.trim() )){
+        submitmitButtion.disabled = false;
+    }else{
+        submitmitButtion.disabled =true;
+    }
+}
+
+function toggleButtiom(){
+    const inputField =document.getElementById('input-field');
+    const  applyButtion =document.getElementById('apply');
+   
 }

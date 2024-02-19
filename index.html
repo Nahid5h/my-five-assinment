@@ -209,7 +209,9 @@
           </div>
         </div>
         <hr class="my-10">
-        <button class="btn h-16 w-36 mb-5 "><img class="" src="images/wheel.svg" alt=""></button>
+        <div class="flex justify-end">
+          <button class="btn h-16 w-36 mb-5 "><img class="" src="images/wheel.svg" alt=""></button>
+        </div>
         <!-- key start  -->
       <div class="flex justify-between items-center text-3xl font-normal my-10">
         <p>A</p>
@@ -323,10 +325,10 @@
               class="w-full rounded-xl h-16 px-5 outline-none"
               type="text"
               name="text"
-              id=""
+              id="input-field" onkeyup="toggleButtiom()"
               placeholder="Have any coupon?"
             />
-            <button
+            <button id="apply"
               class="absolute right-5 top-1 btn bg-green-500 text-white font-bold"
             >
               Apply
@@ -353,7 +355,7 @@
             class="w-full h-14 px-5 rounded-xl mt-2 border-gray-300 border-2 outline-none"
             type="text"
             name="name"
-            id=""
+            id="phone-number" onkeyup="toggleButtion()"
             placeholder="Enter your phone number"
           />
         </div>
@@ -368,7 +370,7 @@
           />
         </div>
         <div class="">
-          <button onclick="play()" class="btn w-full my-14 bg-green-500 h-20 rounded-3xl text-2xl text-white">Next</button>
+          <button onclick="play()" id="submit-Buttion" class="btn w-full my-14 bg-green-500 h-20 rounded-3xl text-2xl text-white" disabled>Next</button>
         </div>
         <div class="flex justify-between px-5 my-16 text-3xl">
           <a href=""><u>Terms and Condition</u></a
@@ -397,7 +399,41 @@
  </div>
 </section>
 <!-- footer section  -->
+<footer id="foot" class="footer p-10 bg-black text-neutral-content mt-14">
+  <div class="container mx-auto">
+    <div class="flex justify-between w-full">
+      <div>
+        <h1 class="text-4xl font-extrabold mb-3 text-white">E-Ticket</h1>
+        <p>
+          E-Ticket is a digital platform to make your <br />daily commuting
+          better.
+        </p>
+      </div>
 
+      <div>
+        <p>Download our app</p>
+        <div
+          class="border-2 border-gray-100 p-2 flex gap-2 rounded-lg mt-3"
+        >
+          <img src="images/playstore.png" alt="" />
+          <div>
+            <p class="text-lg">Get it now</p>
+            <h2 class="font-bold text-2xl">Google Play</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="foot-hr" />
+    <div class="flex justify-between w-full">
+      <small>@all rights reserved, E-Ticket services limited.2024</small>
+      <div class="flex gap-4">
+        <p>Terms & condition</p>
+        <p>Return & refund policy</p>
+        <p>Privacy policy</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
 
 
